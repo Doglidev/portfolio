@@ -54,7 +54,7 @@ export function Hero() {
             <span className="text-[#00d4ff]">const</span> developer <span className="text-gray-500">=</span> {'{'}
           </div>
 
-          <h1 className={`font-display font-extrabold text-5xl sm:text-6xl md:text-7xl lg:text-7xl leading-[0.9] mb-6 tracking-tight ${mounted ? 'animate-fade-in delay-100' : 'opacity-0'}`}>
+          <h1 className={`font-display font-extrabold text-5xl sm:text-6xl md:text-7xl lg:text-6xl leading-[0.9] mb-6 tracking-tight ${mounted ? 'animate-fade-in delay-100' : 'opacity-0'}`}>
             <span className="text-white block">MATEO</span>
             <span className="gradient-text text-glow block">DOGLIANI</span>
           </h1>
