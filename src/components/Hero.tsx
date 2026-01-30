@@ -104,6 +104,14 @@ export function Hero() {
             >
               Contactar
             </a>
+            <a
+              href="/cv.pdf"
+              download="cv" 
+              className="px-7 py-3.5 border border-gray-700 text-white font-semibold rounded-lg hover:border-[#00d4ff] hover:text-[#00d4ff] transition-all duration-300 font-body"
+              data-hoverable
+            >
+              Descargar CV
+            </a>
           </div>
         </div>
       </div>

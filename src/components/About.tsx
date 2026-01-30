@@ -1,6 +1,7 @@
 'use client';
 
 import { AnimatedSection } from './ScrollAnimation';
+import Image from 'next/image';
 
 const versatilityItems = [
   {
@@ -44,13 +45,8 @@ export function About() {
                 
        
                 <div className="absolute inset-2 bg-[#0c0c12] rounded-xl overflow-hidden flex items-center justify-center">
-                 
-                  <div className="text-center p-8">
-                    <div className="w-32 h-32 mx-auto mb-4 rounded-full bg-gradient-to-br from-[#00d4ff]/30 to-[#00ff88]/30 flex items-center justify-center">
-                      <span className="font-display text-4xl font-bold text-white/80">MG</span>
-                    </div>
-                    <p className="font-mono text-xs text-gray-500">[ tu foto aquí ]</p>
-                  </div>
+                 <Image src="/yo.jpeg" alt="Mateo Dogliani" fill className='object-cover object-center' />
+                  
                 </div>
 
                 {/* elementos decorativos */}
