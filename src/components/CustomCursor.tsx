@@ -2,25 +2,13 @@
 
 import { useEffect, useState } from 'react';
 
-/**
- * Cursor personalizado con efecto de seguimiento
- * 
- * ¿Cómo funciona?
- * - Escucha mousemove para actualizar la posición
- * - Escucha mouseover para detectar elementos "hoverable"
- * - Renderiza dos elementos: un punto y un anillo
- * - El anillo tiene un pequeño delay (transición CSS) para efecto de "lag"
- * 
- * IMPORTANTE: Solo funciona en desktop (pointer: fine)
- * En mobile/touch se oculta automáticamente
- */
 export function CustomCursor() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // Solo mostrar en dispositivos con mouse
+    // solo mostrar en dispositivos con mouse
     const hasPointer = window.matchMedia('(pointer: fine)').matches;
     if (!hasPointer) return;
 
@@ -31,7 +19,7 @@ export function CustomCursor() {
     };
 
     const handleMouseOver = (e: MouseEvent) => {
-      // Detectar si el elemento (o algún padre) es "hoverable"
+      // detectar si el elemento (o algún padre) es "hoverable"
       const target = e.target as HTMLElement;
       const isHoverable = target.closest('a, button, [data-hoverable]');
       setIsHovering(!!isHoverable);
@@ -46,12 +34,12 @@ export function CustomCursor() {
     };
   }, []);
 
-  // No renderizar en mobile/touch
+  // no renderizar en mobile/touch
   if (!isVisible) return null;
 
   return (
     <>
-      {/* Punto central - sigue el mouse exactamente */}
+      {/* punto central, sigue el mouse exactamente */}
       <div
         className={`custom-cursor ${isHovering ? 'cursor-hover' : ''}`}
         style={{
@@ -62,7 +50,7 @@ export function CustomCursor() {
         <div className="cursor-dot" />
       </div>
 
-      {/* Anillo exterior - tiene delay en la transición */}
+      {/* anillo exterior - tiene delay en la transicion */}
       <div
         className={`custom-cursor ${isHovering ? 'cursor-hover' : ''}`}
         style={{

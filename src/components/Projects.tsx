@@ -2,18 +2,6 @@
 
 import { AnimatedSection } from './ScrollAnimation';
 
-/**
- * Sección de Proyectos
- * 
- * Cada proyecto muestra:
- * - Número (.01, .02, .03)
- * - Año y tipo
- * - Título y descripción
- * - Impacto destacado (badge cyan)
- * - Stack tecnológico
- */
-
-// Acá definís tus proyectos - fácil de agregar más
 const projects = [
   {
     title: 'Sistema de Lectura de Medidores',
@@ -85,7 +73,7 @@ export function Projects() {
               >
                 <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
                   <div className="flex-1">
-                    {/* Header del proyecto */}
+                    {/* header del proyecto */}
                     <div className="flex flex-wrap items-center gap-3 mb-4">
                       <span className="font-mono text-[#00d4ff] text-sm">
                         .0{index + 1}
@@ -100,17 +88,17 @@ export function Projects() {
                       </span>
                     </div>
 
-                    {/* Título */}
+                    {/* titulo */}
                     <h3 className="font-display font-bold text-xl sm:text-2xl lg:text-3xl mb-3 text-white group-hover:text-[#00d4ff] transition-colors">
                       {project.title}
                     </h3>
 
-                    {/* Descripción */}
+                    {/* descripcion */}
                     <p className="font-body text-gray-400 mb-5 leading-relaxed max-w-2xl">
                       {project.description}
                     </p>
 
-                    {/* Badge de impacto */}
+                    {/* badge de impacto */}
                     <div className="inline-flex items-center gap-2 bg-[#00d4ff]/10 border border-[#00d4ff]/20 rounded-full px-4 py-2">
                       <span className="w-2 h-2 bg-[#00d4ff] rounded-full animate-pulse" />
                       <span className="text-[#00d4ff] text-sm font-medium font-body">
@@ -119,7 +107,7 @@ export function Projects() {
                     </div>
                   </div>
 
-                  {/* Tech Stack */}
+                  {/* tech stack */}
                   <div className="flex flex-wrap lg:flex-col gap-2 lg:items-end lg:min-w-[140px]">
                     {project.tech.map((tech, i) => (
                       <span

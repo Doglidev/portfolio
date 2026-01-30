@@ -2,19 +2,11 @@
 
 import { AnimatedSection } from './ScrollAnimation';
 
-/**
- * Sección de Contacto
- * 
- * CTAs principales: Email y LinkedIn
- * Links secundarios: GitHub, Twitter/X
- */
-
-// CONFIGURACIÓN - Cambiar estos valores por los tuyos reales
 const CONTACT_INFO = {
-  email: 'doglianimateo@gmail.com', // Cambiar
-  linkedin: 'https://www.linkedin.com/in/mateo-dogliani-6382051aa/', // Cambiar
-  github: 'https://github.com/Doglidev', // Cambiar
-  twitter: null, // Cambiar (o null si no tenés)
+  email: 'doglianimateo@gmail.com', 
+  linkedin: 'https://www.linkedin.com/in/mateo-dogliani-6382051aa/',
+  github: 'https://github.com/Doglidev', 
+  twitter: null, 
 };
 
 export function Contact() {
@@ -103,9 +95,6 @@ export function Contact() {
   );
 }
 
-/**
- * Footer simple
- */
 export function Footer() {
   const currentYear = new Date().getFullYear();
 

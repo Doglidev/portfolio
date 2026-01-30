@@ -2,14 +2,6 @@
 
 import { useEffect, useState } from 'react';
 
-/**
- * Navbar con efecto blur al hacer scroll
- * 
- * Comportamiento:
- * - Inicialmente: transparente, padding grande
- * - Al scrollear (>50px): fondo con blur, padding reducido, borde inferior
- */
-
 const navItems = [
   { label: 'About', href: '#about' },
   { label: 'Proyectos', href: '#proyectos' },

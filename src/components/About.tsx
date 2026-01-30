@@ -2,16 +2,6 @@
 
 import { AnimatedSection } from './ScrollAnimation';
 
-/**
- * Sección About Me
- * 
- * Muestra:
- * - Foto (placeholder por ahora)
- * - Bio personal
- * - Cards de versatilidad (Mobile, Web, Backend, Enterprise)
- * - Stats (años de exp, proyectos, etc)
- */
-
 const versatilityItems = [
   {
     icon: '📱',
@@ -46,27 +36,15 @@ export function About() {
     <section id="about" className="py-24 sm:py-32 bg-[#08080c]">
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* ===== FOTO ===== */}
+
           <AnimatedSection>
             <div className="relative">
               <div className="aspect-square max-w-md mx-auto lg:mx-0 relative">
-                {/* Marco con gradiente */}
-                <div className="absolute inset-0 bg-gradient-to-br from-[#00d4ff]/20 to-[#00ff88]/20 rounded-2xl" />
+                               <div className="absolute inset-0 bg-gradient-to-br from-[#00d4ff]/20 to-[#00ff88]/20 rounded-2xl" />
                 
-                {/* Contenedor de foto */}
+       
                 <div className="absolute inset-2 bg-[#0c0c12] rounded-xl overflow-hidden flex items-center justify-center">
-                  {/* PLACEHOLDER - Reemplazar con tu foto real */}
-                  {/* 
-                    Para agregar tu foto:
-                    1. Poné tu imagen en /public/foto-mateo.jpg
-                    2. Reemplazá este div por:
-                    <Image 
-                      src="/foto-mateo.jpg" 
-                      alt="Mateo Gimenez"
-                      fill
-                      className="object-cover"
-                    />
-                  */}
+                 
                   <div className="text-center p-8">
                     <div className="w-32 h-32 mx-auto mb-4 rounded-full bg-gradient-to-br from-[#00d4ff]/30 to-[#00ff88]/30 flex items-center justify-center">
                       <span className="font-display text-4xl font-bold text-white/80">MG</span>
@@ -75,7 +53,7 @@ export function About() {
                   </div>
                 </div>
 
-                {/* Elementos decorativos */}
+                {/* elementos decorativos */}
                 <div className="absolute -bottom-4 -right-4 w-24 h-24 border border-[#00d4ff]/30 rounded-xl" />
                 <div className="absolute -top-4 -left-4 w-16 h-16 border border-[#00ff88]/20 rounded-lg" />
               </div>
@@ -111,7 +89,7 @@ export function About() {
               </div>
             </AnimatedSection>
 
-            {/* Cards de versatilidad */}
+            {/* tarjetas de versatilidad */}
             <AnimatedSection delay={200}>
               <div className="grid grid-cols-2 gap-3 mt-8">
                 {versatilityItems.map((item, i) => (
@@ -128,7 +106,7 @@ export function About() {
               </div>
             </AnimatedSection>
 
-            {/* Stats */}
+            {/* stats */}
             <AnimatedSection delay={300}>
               <div className="flex gap-8 mt-8 pt-8 border-t border-gray-800/50">
                 {stats.map((stat, i) => (

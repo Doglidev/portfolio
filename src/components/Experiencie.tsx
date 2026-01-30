@@ -10,8 +10,8 @@ const experience = [
     description:
       'Desarrollo de aplicaciones móviles y web utilizando Genero 4GL, Informix y MySQL. Implementación de soluciones escalables y optimizadas para mejorar la eficiencia operativa de los clientes.',
   },
-  // Podés agregar más experiencias acá
-];
+  
+  ];
 
 export function Experiencie() {
   return (
@@ -33,11 +33,11 @@ export function Experiencie() {
                 className="relative bg-[#0a0a10] border border-gray-800/50 rounded-2xl p-6 sm:p-8 hover:border-[#00d4ff]/30 transition-all duration-300 group"
                 data-hoverable
               >
-                {/* Línea lateral decorativa */}
+                {/* linea lateral decorativa */}
                 <div className="absolute left-0 top-8 bottom-8 w-1 bg-gradient-to-b from-[#00d4ff] to-[#00ff88] rounded-full opacity-50 group-hover:opacity-100 transition-opacity" />
 
                 <div className="pl-6">
-                  {/* Empresa y período */}
+                  {/* empresa y periodo */}
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-3">
                     <h3 className="font-display font-bold text-xl sm:text-2xl text-white group-hover:text-[#00d4ff] transition-colors">
                       {exp.company}
@@ -47,10 +47,10 @@ export function Experiencie() {
                     </span>
                   </div>
 
-                  {/* Rol */}
+                  {/* rol */}
                   <p className="text-[#00d4ff] font-medium mb-4">{exp.role}</p>
 
-                  {/* Descripción */}
+                  {/* descripcion */}
                   <p className="text-gray-400 leading-relaxed">{exp.description}</p>
                 </div>
               </div>

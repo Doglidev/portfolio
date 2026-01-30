@@ -2,12 +2,6 @@
 
 import { useEffect, useState } from 'react';
 
-/**
- * Hero Section con efecto de typing
- * 
- * El efecto de typing simula escribir el rol letra por letra
- * usando un intervalo que va agregando caracteres
- */
 export function Hero() {
   const [typedText, setTypedText] = useState('');
   const [mounted, setMounted] = useState(false);
@@ -24,61 +18,57 @@ export function Hero() {
       } else {
         clearInterval(timer);
       }
-    }, 80); // 80ms por caracter
+    }, 80);
 
     return () => clearInterval(timer);
   }, []);
 
   return (
     <section className="relative min-h-screen flex items-center">
-      {/* ===== BACKGROUND ===== */}
+     
       <div className="absolute inset-0 z-0">
-        {/* Gradiente base */}
+       
         <div className="absolute inset-0 bg-gradient-to-br from-[#0a0a12] via-[#050508] to-[#0a0a12]" />
         
-        {/* Efecto de luz ambiental */}
+      
         <div className="absolute inset-0 hero-gradient" />
         
-        {/* Círculos de luz difusa */}
+       
         <div className="absolute right-0 top-1/4 w-96 h-96 bg-[#00d4ff]/5 rounded-full blur-3xl" />
         <div className="absolute left-1/4 bottom-1/4 w-64 h-64 bg-[#00ff88]/5 rounded-full blur-3xl" />
         
-        {/* Grid pattern */}
+     
         <div className="absolute inset-0 grid-bg" />
         
-        {/* Overlay para legibilidad del texto */}
+       
         <div className="absolute inset-0 bg-gradient-to-r from-[#050508] via-[#050508]/80 to-transparent" />
-        
-        {/* Noise texture */}
+
         <div className="noise-overlay" />
       </div>
 
-      {/* ===== CONTENT ===== */}
+     
       <div className="relative z-10 max-w-6xl mx-auto px-6 w-full">
         <div className="max-w-2xl">
-          {/* Decorador de código */}
+          
           <div className={`font-mono text-xs text-gray-600 mb-6 ${mounted ? 'animate-fade-in' : 'opacity-0'}`}>
             <span className="text-[#00d4ff]">const</span> developer <span className="text-gray-500">=</span> {'{'}
           </div>
 
-          {/* Nombre */}
           <h1 className={`font-display font-extrabold text-5xl sm:text-6xl md:text-7xl lg:text-7xl leading-[0.9] mb-6 tracking-tight ${mounted ? 'animate-fade-in delay-100' : 'opacity-0'}`}>
             <span className="text-white block">MATEO</span>
             <span className="gradient-text text-glow block">DOGLIANI</span>
           </h1>
 
-          {/* Rol con typing */}
+         
           <div className={`font-mono text-base sm:text-lg text-gray-400 mb-4 ${mounted ? 'animate-fade-in delay-200' : 'opacity-0'}`}>
             <span className="text-[#00d4ff]">role:</span>{' '}
             <span className="typing-cursor">&quot;{typedText}&quot;</span>
           </div>
 
-          {/* Cierre del código */}
           <div className={`font-mono text-xs text-gray-600 mb-8 ${mounted ? 'animate-fade-in delay-200' : 'opacity-0'}`}>
             {'}'};
           </div>
 
-          {/* Descripción */}
           <p className={`font-body text-gray-400 text-lg sm:text-xl leading-relaxed mb-6 max-w-lg ${mounted ? 'animate-fade-in delay-300' : 'opacity-0'}`}>
             No solo hago webs. Construyo{' '}
             <span className="text-white font-medium">
@@ -86,7 +76,7 @@ export function Hero() {
             </span>.
           </p>
 
-          {/* Badges de versatilidad */}
+         
           <div className={`flex flex-wrap gap-2 mb-10 ${mounted ? 'animate-fade-in delay-400' : 'opacity-0'}`}>
             {['Mobile', 'Web', 'Backend', 'Enterprise'].map((item) => (
               <span
@@ -98,7 +88,7 @@ export function Hero() {
             ))}
           </div>
 
-          {/* CTAs */}
+        
           <div className={`flex flex-wrap gap-4 ${mounted ? 'animate-fade-in delay-500' : 'opacity-0'}`}>
             <a
               href="#proyectos"
