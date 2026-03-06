@@ -26,11 +26,6 @@ const versatilityItems = [
   },
 ];
 
-const stats = [
-  { value: '+1', label: 'Año de exp.' },
-  { value: '+5', label: 'Proyectos prod.' },
-  { value: '3', label: 'Tipos de dev' },
-];
 
 export function About() {
   return (
@@ -105,12 +100,7 @@ export function About() {
             {/* stats */}
             <AnimatedSection delay={300}>
               <div className="flex gap-8 mt-8 pt-8 border-t border-gray-800/50">
-                {stats.map((stat, i) => (
-                  <div key={i}>
-                    <div className="font-display font-bold text-3xl text-[#00d4ff]">{stat.value}</div>
-                    <div className="font-body text-sm text-gray-500">{stat.label}</div>
-                  </div>
-                ))}
+              
               </div>
             </AnimatedSection>
           </div>
