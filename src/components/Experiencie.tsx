@@ -6,9 +6,16 @@ const experience = [
   {
     company: 'Proyectos Informáticos',
     role: 'Desarrollador Full Stack',
-    period: '2024 - Presente',
+    period: '2025 - Presente',
     description:
       'Desarrollo de aplicaciones móviles y web utilizando Genero 4GL, Informix y MySQL. Implementación de soluciones escalables y optimizadas para mejorar la eficiencia operativa de los clientes.',
+  },
+  {
+    company: 'Maipu S.A.',
+    role: 'Vendedor de Repuestos',
+    period: '2023 - 2025',
+    description:
+      'Vendedor mayorista de repuestos automotrices a compañías de seguros.Mayor volumen de ventas en toda la estructura comercial. Negociación con clientes corporativos, análisis de mercado y gestión de cartera B2B..',
   },
   
   ];

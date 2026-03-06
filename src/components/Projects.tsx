@@ -6,8 +6,8 @@ const projects = [
   {
     title: 'Sistema de Lectura de Medidores',
     description:
-      'Aplicación móvil que digitalizó completamente el proceso de lectura municipal, reemplazando un sistema manual obsoleto. Arquitectura offline-first para zonas sin conectividad.',
-    impact: 'Eliminé +2000 planillas de papel mensuales',
+      'Aplicación móvil desarrollada para digitalizar el proceso de lectura de medidores municipales. Arquitectura offline-first diseñada para zonas sin conectividad, con sincronización por CSV y validación de datos..',
+    impact: 'Desarrollada desde documentación oficial con mínimos recursos externos',
     tech: ['Genero 4GL', 'SQLite', 'Mobile', 'Offline-First'],
     year: '2025',
     type: 'Mobile App',
@@ -22,6 +22,7 @@ const projects = [
     year: '2025',
     type: 'Full Stack',
     highlight: 'End-to-End',
+    liveUrl: 'https://gym-stack-web.vercel.app/login',
   },
   {
     title: 'Sistema de WEB - SIGI',
@@ -98,12 +99,27 @@ export function Projects() {
                       {project.description}
                     </p>
 
-                    {/* badge de impacto */}
-                    <div className="inline-flex items-center gap-2 bg-[#00d4ff]/10 border border-[#00d4ff]/20 rounded-full px-4 py-2">
-                      <span className="w-2 h-2 bg-[#00d4ff] rounded-full animate-pulse" />
-                      <span className="text-[#00d4ff] text-sm font-medium font-body">
-                        {project.impact}
-                      </span>
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                      {/* badge de impacto */}
+                      <div className="inline-flex items-center gap-2 bg-[#00d4ff]/10 border border-[#00d4ff]/20 rounded-full px-4 py-2">
+                        <span className="w-2 h-2 bg-[#00d4ff] rounded-full animate-pulse" />
+                        <span className="text-[#00d4ff] text-sm font-medium font-body">
+                          {project.impact}
+                        </span>
+                      </div>
+                      
+                      {/* botón de demo live */}
+                      {project.liveUrl && (
+                        <a
+                          href={project.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 px-4 py-2 bg-[#00d4ff] text-[#050508] rounded-full font-medium text-sm hover:bg-[#00d4ff] hover:shadow-lg hover:shadow-[#00d4ff]/50 transition-all duration-300 font-body"
+                        >
+                          <span>→</span>
+                          <span>IR A LA DEMO LIVE</span>
+                        </a>
+                      )}
                     </div>
                   </div>
 
