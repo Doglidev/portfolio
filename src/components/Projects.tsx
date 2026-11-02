@@ -71,7 +71,6 @@ const groups: Group[] = [
         year: '2025',
         type: 'Full Stack',
         highlight: 'End-to-End',
-        liveUrl: 'https://gym-stack-web.vercel.app/login',
       },
     ],
   },
