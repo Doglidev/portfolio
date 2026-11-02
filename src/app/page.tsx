@@ -7,6 +7,7 @@ import {
   Footer,
   CustomCursor,
   Experiencie,
+  Doit,
 } from '@/components';
 import { AcademicBackgroud } from '@/components/AcademicBackgroud';
 
@@ -17,9 +18,10 @@ import { AcademicBackgroud } from '@/components/AcademicBackgroud';
  * 1. Navbar (fixed, con blur al scroll)
  * 2. Hero (tu nombre, rol, CTAs)
  * 3. About (foto, bio, versatilidad)
- * 4. Proyectos (cards con animación)
- * 5. Contacto (CTAs, social links)
- * 6. Footer
+ * 4. Proyectos (cards con animación, agrupados por tipo)
+ * 5. DoIT (producto propio: problema, solución y valor)
+ * 6. Contacto (CTAs, social links)
+ * 7. Footer
  * 
  * El CustomCursor se renderiza en todo el sitio
  */
@@ -38,6 +40,7 @@ export default function Home() {
       <Experiencie />
       <AcademicBackgroud />
       <Projects />
+      <Doit />
       <Contact />
       <Footer />
     </main>

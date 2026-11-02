@@ -78,7 +78,7 @@ export function Hero() {
 
          
           <div className={`flex flex-wrap gap-2 mb-10 ${mounted ? 'animate-fade-in delay-400' : 'opacity-0'}`}>
-            {['Mobile', 'Web', 'Backend', 'Enterprise'].map((item) => (
+            {['Mobile', 'Web', 'Backend', 'Enterprise', 'Automatización'].map((item) => (
               <span
                 key={item}
                 className="px-3 py-1 border border-gray-700/50 rounded-full text-xs text-gray-400 font-mono"

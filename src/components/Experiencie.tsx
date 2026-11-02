@@ -5,20 +5,33 @@ import { AnimatedSection } from './ScrollAnimation';
 const experience = [
   {
     company: 'Proyectos Informáticos',
-    role: 'Desarrollador Full Stack',
-    period: '2025 - Presente',
+    role: 'Project Manager',
+    period: 'Jul 2026 - Presente',
     description:
-      'Desarrollo de aplicaciones móviles y web utilizando Genero 4GL, Informix y MySQL. Implementación de soluciones escalables y optimizadas para mejorar la eficiencia operativa de los clientes.',
+      'Coordino y reporto el avance diario del equipo de desarrollo, guío prioridades y destrabo tareas. Hago de puente entre lo que necesita el cliente y lo que construye el equipo técnico.',
   },
   {
-    company: 'Maipu S.A.',
+    company: 'Proyectos Informáticos',
+    role: 'Desarrollador Full Stack',
+    period: 'Jun 2025 - Presente',
+    description:
+      'Desarrollo y mantenimiento de SIGI, un ERP en Genero 4GL e Informix usado por múltiples municipios y empresas. Construí apps móviles, modernicé la generación de reportes PDF en más de 16 módulos, resolví bugs críticos de producción, desarrollé el sitio comercial en Next.js y hoy participo en la integración con RFID.',
+  },
+  {
+    company: 'Mundo Maipu',
     role: 'Vendedor de Repuestos',
     period: '2023 - 2025',
     description:
-      'Vendedor mayorista de repuestos automotrices a compañías de seguros.Mayor volumen de ventas en toda la estructura comercial. Negociación con clientes corporativos, análisis de mercado y gestión de cartera B2B..',
+      'Vendedor mayorista de repuestos automotrices a compañías de seguros, con el mayor volumen de ventas de toda la estructura comercial. Negociación con clientes corporativos, análisis de mercado y gestión de cartera B2B.',
   },
-  
-  ];
+  {
+    company: 'JOMD',
+    role: 'Técnico Informático (emprendimiento propio)',
+    period: '2020 - 2025',
+    description:
+      'Instalación y mantenimiento de sistemas operativos, drivers y redes; limpieza, ampliación de memoria y recuperación de notebooks y PC.',
+  },
+];
 
 export function Experiencie() {
   return (
@@ -35,7 +48,7 @@ export function Experiencie() {
         {/* Timeline */}
         <div className="space-y-6">
           {experience.map((exp, index) => (
-            <AnimatedSection key={index} delay={index * 100}>
+            <AnimatedSection key={`${exp.company}-${exp.role}`} delay={index * 100}>
               <div
                 className="relative bg-[#0a0a10] border border-gray-800/50 rounded-2xl p-6 sm:p-8 hover:border-[#00d4ff]/30 transition-all duration-300 group"
                 data-hoverable

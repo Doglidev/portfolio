@@ -75,7 +75,8 @@ export function About() {
                 </p>
                 <p>
                   Mi background en <span className="text-white">ventas automotrices</span> (donde fui top performer)
-                  me dio una perspectiva única: entiendo tanto el lado técnico como el negocio.
+                  y mi rol actual coordinando el equipo de desarrollo de SIGI me dieron una perspectiva única:
+                  entiendo tanto el lado técnico como el negocio.
                 </p>
               </div>
             </AnimatedSection>
