@@ -10,3 +10,4 @@ export { CustomCursor } from './CustomCursor';
 export { AnimatedSection, useScrollAnimation } from './ScrollAnimation';
 export { Experiencie } from './Experiencie'; 
 export { AcademicBackgroud } from './AcademicBackgroud';
+export { Doit } from './Doit';

@@ -1,7 +1,6 @@
 'use client';
 
 import { AnimatedSection } from './ScrollAnimation';
-import Image from 'next/image';
 
 const versatilityItems = [
   {
@@ -31,25 +30,8 @@ export function About() {
   return (
     <section id="about" className="py-24 sm:py-32 bg-[#08080c]">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-
-          <AnimatedSection>
-            <div className="relative">
-              <div className="aspect-square max-w-md mx-auto lg:mx-0 relative">
-                               <div className="absolute inset-0 bg-gradient-to-br from-[#00d4ff]/20 to-[#00ff88]/20 rounded-2xl" />
-                
-       
-                <div className="absolute inset-2 bg-[#0c0c12] rounded-xl overflow-hidden flex items-center justify-center">
-                 <Image src="/yo.jpeg" alt="Mateo Dogliani" fill className='object-cover object-center' />
-                  
-                </div>
-
-                {/* elementos decorativos */}
-                <div className="absolute -bottom-4 -right-4 w-24 h-24 border border-[#00d4ff]/30 rounded-xl" />
-                <div className="absolute -top-4 -left-4 w-16 h-16 border border-[#00ff88]/20 rounded-lg" />
-              </div>
-            </div>
-          </AnimatedSection>
+        {/* Sin foto: el contenido ocupa un solo bloque centrado en la lectura */}
+        <div className="max-w-3xl">
 
           {/* ===== CONTENIDO ===== */}
           <div>
@@ -75,14 +57,15 @@ export function About() {
                 </p>
                 <p>
                   Mi background en <span className="text-white">ventas automotrices</span> (donde fui top performer)
-                  me dio una perspectiva única: entiendo tanto el lado técnico como el negocio.
+                  y mi rol actual coordinando el equipo de desarrollo de SIGI me dieron una perspectiva única:
+                  entiendo tanto el lado técnico como el negocio.
                 </p>
               </div>
             </AnimatedSection>
 
             {/* tarjetas de versatilidad */}
             <AnimatedSection delay={200}>
-              <div className="grid grid-cols-2 gap-3 mt-8">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-8">
                 {versatilityItems.map((item, i) => (
                   <div
                     key={i}
@@ -94,13 +77,6 @@ export function About() {
                     <div className="font-body text-xs text-gray-500 mt-1">{item.desc}</div>
                   </div>
                 ))}
-              </div>
-            </AnimatedSection>
-
-            {/* stats */}
-            <AnimatedSection delay={300}>
-              <div className="flex gap-8 mt-8 pt-8 border-t border-gray-800/50">
-              
               </div>
             </AnimatedSection>
           </div>

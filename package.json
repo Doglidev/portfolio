@@ -1,7 +1,7 @@
 {
   "name": "mateo-portfolio",
   "version": "1.0.0",
-  "description": "Portfolio de Mateo Gimenez - Full Stack Developer",
+  "description": "Portfolio de Mateo Dogliani - Full Stack Developer",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "keywords": ["portfolio", "nextjs", "developer"],
-  "author": "Mateo Gimenez",
+  "author": "Mateo Dogliani",
   "license": "MIT",
   "dependencies": {
     "@types/node": "^25.1.0",

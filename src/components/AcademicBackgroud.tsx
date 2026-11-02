@@ -13,7 +13,7 @@ const academicBackground = [
     {
         institution: 'TECLAB Instituto Tecnico Superior',
         degree: 'Tecnico Superior en Programación',
-        period: '2024 - 2026 (Finalizado)',
+        period: '2024 - 2025 (Finalizado)',
         description:
             'Estudios avanzados en desarrollo de software, abarcando programación web, bases de datos, y metodologías ágiles para la gestión de proyectos tecnológicos.',
     }
@@ -21,7 +21,7 @@ const academicBackground = [
 
 export function AcademicBackgroud() {
 return (
-    <section id="experiencia" className="py-24 sm:py-32 bg-[#08080c]">
+    <section id="estudios" className="py-24 sm:py-32 bg-[#08080c]">
       <div className="max-w-6xl mx-auto px-6">
         {/* Header */}
         <AnimatedSection>
