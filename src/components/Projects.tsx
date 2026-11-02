@@ -81,29 +81,29 @@ const groups: Group[] = [
       {
         title: 'Web comercial de SIGI',
         description:
-          'Sitio web comercial para el ERP SIGI, diseñado para convertir visitantes en clientes: información del producto, casos de uso y contacto directo.',
-        impact: 'Desplegada y administrada por mí en un VPS propio',
-        tech: ['Next.js', 'Tailwind CSS', 'Nginx', 'PM2'],
+          'Sitio web comercial para el ERP SIGI, pensado para convertir visitantes en clientes: información del producto, casos de uso y contacto directo.',
+        impact: 'Sitio publicado y en uso',
+        tech: ['Next.js', 'Tailwind CSS'],
         year: '2025',
         type: 'Web',
         highlight: 'Institucional',
       },
       {
-        title: 'IP San Pablo',
+        title: 'Sitio institucional IP San Pablo',
         description:
-          'Sitio institucional con backend en Node.js, que administro en un VPS con CloudPanel. El proceso queda configurado para levantarse solo después de un reinicio o una caída del servidor.',
-        impact: 'Infraestructura administrada de punta a punta',
-        tech: ['Node.js', 'PM2', 'CloudPanel', 'VPS'],
+          'Sitio web institucional desarrollado de punta a punta: diseño, desarrollo y puesta en línea.',
+        impact: 'Sitio publicado para un cliente real',
+        tech: ['Node.js', 'Web'],
         year: '2026',
         type: 'Web',
-        highlight: 'Infraestructura',
+        highlight: 'Institucional',
       },
       {
         title: 'SERV-QUIM',
         description:
-          'Rediseño del sitio de una empresa del rubro agroquímico: página de inicio, catálogo y precios de mantenimiento. Trabajo por especificaciones y en sprints.',
+          'Rediseño del sitio de una empresa del rubro agroquímico: página de inicio y catálogo, trabajado por especificaciones y en sprints.',
         impact: 'Rediseño en curso para una empresa real',
-        tech: ['Rediseño web', 'Specs', 'Sprints'],
+        tech: ['Rediseño web', 'Sprints'],
         year: '2026',
         type: 'Web',
         highlight: 'En curso',
@@ -199,7 +199,7 @@ export function Projects() {
                                 className="inline-flex items-center gap-2 px-4 py-2 bg-[#00d4ff] text-[#050508] rounded-full font-medium text-sm hover:bg-[#00d4ff] hover:shadow-lg hover:shadow-[#00d4ff]/50 transition-all duration-300 font-body"
                               >
                                 <span>→</span>
-                                <span>IR A LA DEMO LIVE</span>
+                                <span>VER SITIO</span>
                               </a>
                             )}
                           </div>
