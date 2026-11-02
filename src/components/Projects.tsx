@@ -79,7 +79,7 @@ const groups: Group[] = [
     title: 'Sitios que presentan y venden',
     items: [
       {
-        title: 'Web comercial de SIGI',
+        title: 'Web de Proyectos Informáticos (SIGI)',
         description:
           'Sitio web comercial para el ERP SIGI, pensado para convertir visitantes en clientes: información del producto, casos de uso y contacto directo.',
         impact: 'Sitio publicado y en uso',
@@ -87,6 +87,7 @@ const groups: Group[] = [
         year: '2025',
         type: 'Web',
         highlight: 'Institucional',
+        liveUrl: 'https://proyectosinformaticos.com.ar',
       },
       {
         title: 'Sitio institucional IP San Pablo',
