@@ -97,6 +97,18 @@ const groups: Group[] = [
         year: '2026',
         type: 'Web',
         highlight: 'Institucional',
+        liveUrl: 'https://ipsanpablo.com',
+      },
+      {
+        title: 'JD Informática',
+        description:
+          'Sitio web de mi marca de desarrollo web a medida para inmobiliarias y pymes: presenta los servicios y facilita el contacto con nuevos clientes.',
+        impact: 'Sitio publicado con dominio propio',
+        tech: ['Node.js', 'Web'],
+        year: '2026',
+        type: 'Web',
+        highlight: 'Marca propia',
+        liveUrl: 'https://jdinformatica.ar',
       },
       {
         title: 'SERV-QUIM',
