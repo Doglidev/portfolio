@@ -1,13 +1,10 @@
-// Exportamos todos los componentes desde un solo lugar
-// Esto permite imports más limpios: import { Navbar, Hero } from '@/components'
-
+// Exportamos todos los componentes desde un solo lugar:
+// import { Navbar, Hero } from '@/components'
 export { Navbar } from './Navbar';
 export { Hero } from './Hero';
 export { About } from './About';
+export { Services } from './Services';
 export { Projects } from './Projects';
+export { Experience } from './Experience';
+export { Skills } from './Skills';
 export { Contact, Footer } from './Contact';
-export { CustomCursor } from './CustomCursor';
-export { AnimatedSection, useScrollAnimation } from './ScrollAnimation';
-export { Experiencie } from './Experiencie'; 
-export { AcademicBackgroud } from './AcademicBackgroud';
-export { Doit } from './Doit';

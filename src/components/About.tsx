@@ -1,86 +1,33 @@
-'use client';
-
-import { AnimatedSection } from './ScrollAnimation';
-
-const versatilityItems = [
-  {
-    icon: '📱',
-    title: 'Mobile Apps',
-    desc: 'Apps nativas con arquitectura offline-first',
-  },
-  {
-    icon: '🌐',
-    title: 'Web Apps',
-    desc: 'SPAs modernas con React/Next.js',
-  },
-  {
-    icon: '⚙️',
-    title: 'Backend',
-    desc: 'APIs robustas con Node.js/NestJS',
-  },
-  {
-    icon: '🏢',
-    title: 'Enterprise',
-    desc: 'Sistemas legacy y ERPs corporativos',
-  },
-];
-
+import { about } from '@/data/content';
 
 export function About() {
   return (
-    <section id="about" className="py-24 sm:py-32 bg-[#08080c]">
-      <div className="max-w-6xl mx-auto px-6">
-        {/* Sin foto: el contenido ocupa un solo bloque centrado en la lectura */}
-        <div className="max-w-3xl">
+    <section id="about" className="border-t border-line px-5 py-20 sm:px-8 sm:py-24">
+      <div className="mx-auto max-w-6xl">
+        <h2 className="font-display text-3xl font-medium tracking-tight sm:text-4xl">About</h2>
 
-          {/* ===== CONTENIDO ===== */}
-          <div>
-            <AnimatedSection>
-              <span className="font-mono text-[#00d4ff] text-sm">// Sobre mí</span>
-              <h2 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl mt-3 mb-6">
-                Más que <span className="gradient-text">código</span>
-              </h2>
-            </AnimatedSection>
+        <div className="mt-10 grid gap-12 lg:grid-cols-[1fr_1fr] lg:gap-20">
+          <div className="max-w-prose space-y-5 text-lg">
+            {about.intro.map((p) => (
+              <p key={p}>{p}</p>
+            ))}
+          </div>
 
-            <AnimatedSection delay={100}>
-              <div className="space-y-4 font-body text-gray-400 leading-relaxed">
-                <p>
-                  Soy <span className="text-white font-medium">Mateo</span>, desarrollador Full Stack de{' '}
-                  <span className="text-white">Córdoba, Argentina</span>. Con 22 años, llevo más de un año
-                  construyendo soluciones que resuelven problemas reales.
-                </p>
-                <p>
-                  Lo que me diferencia:{' '}
-                  <span className="text-[#00d4ff]">no me limito a un solo tipo de desarrollo</span>.
-                  Puedo construir una app móvil offline-first, un sistema web moderno, o integrarme con
-                  tecnologías enterprise legacy — lo que el proyecto necesite.
-                </p>
-                <p>
-                  Mi background en <span className="text-white">ventas automotrices</span> (donde fui top performer)
-                  y mi rol actual coordinando el equipo de desarrollo de SIGI me dieron una perspectiva única:
-                  entiendo tanto el lado técnico como el negocio.
-                </p>
-              </div>
-            </AnimatedSection>
-
-            {/* tarjetas de versatilidad */}
-            <AnimatedSection delay={200}>
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-8">
-                {versatilityItems.map((item, i) => (
-                  <div
-                    key={i}
-                    className="p-4 bg-[#0c0c14] rounded-xl border border-gray-800/50 hover:border-[#00d4ff]/30 transition-colors"
-                    data-hoverable
-                  >
-                    <div className="text-2xl mb-2">{item.icon}</div>
-                    <div className="font-display font-semibold text-white text-sm">{item.title}</div>
-                    <div className="font-body text-xs text-gray-500 mt-1">{item.desc}</div>
-                  </div>
-                ))}
-              </div>
-            </AnimatedSection>
+          <div className="max-w-prose">
+            <h3 className="font-display text-xl font-medium">{about.approachTitle}</h3>
+            <p className="mt-3 text-slate">{about.approach}</p>
           </div>
         </div>
+
+        {/* Las tres dimensiones del perfil */}
+        <dl className="mt-14 grid gap-px overflow-hidden rounded border border-line bg-line sm:grid-cols-3">
+          {about.pillars.map((pillar) => (
+            <div key={pillar.title} className="bg-paper p-6">
+              <dt className="font-display text-xl font-medium">{pillar.title}</dt>
+              <dd className="mt-2 text-sm text-slate">{pillar.text}</dd>
+            </div>
+          ))}
+        </dl>
       </div>
     </section>
   );
