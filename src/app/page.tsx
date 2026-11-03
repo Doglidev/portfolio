@@ -2,47 +2,39 @@ import {
   Navbar,
   Hero,
   About,
+  Services,
   Projects,
+  Experience,
+  Skills,
   Contact,
   Footer,
-  CustomCursor,
-  Experiencie,
-  Doit,
 } from '@/components';
-import { AcademicBackgroud } from '@/components/AcademicBackgroud';
 
 /**
- * Página principal del Portfolio
- * 
- * Estructura:
- * 1. Navbar (fixed, con blur al scroll)
- * 2. Hero (tu nombre, rol, CTAs)
- * 3. About (foto, bio, versatilidad)
- * 4. Proyectos (cards con animación, agrupados por tipo)
- * 5. DoIT (producto propio: problema, solución y valor)
- * 6. Contacto (CTAs, social links)
- * 7. Footer
- * 
- * El CustomCursor se renderiza en todo el sitio
+ * Orden de la página (pensado para que el visitante entienda en pocos segundos
+ * quién soy, qué problemas resuelvo, qué experiencia tengo y cómo contactarme):
+ * Hero, About, Services, Projects, Experience, Skills, Contact.
  */
 export default function Home() {
   return (
-    <main className="cursor-custom">
-      {/* Cursor personalizado - solo visible en desktop */}
-      <CustomCursor />
-
-      {/* Navegación */}
+    <>
+      <a
+        href="#about"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded focus:bg-ink focus:px-4 focus:py-2 focus:text-white"
+      >
+        Skip to content
+      </a>
       <Navbar />
-
-      {/* Secciones */}
-      <Hero />
-      <About />
-      <Experiencie />
-      <AcademicBackgroud />
-      <Projects />
-      <Doit />
-      <Contact />
+      <main>
+        <Hero />
+        <About />
+        <Services />
+        <Projects />
+        <Experience />
+        <Skills />
+        <Contact />
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

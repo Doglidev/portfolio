@@ -1,227 +1,131 @@
-/* Google Fonts - DEBE ir antes de @import tailwindcss */
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+/* Las fuentes van ANTES de @import tailwindcss */
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,400&family=Instrument+Sans:wght@400;500;600&display=swap');
 
 @import "tailwindcss";
 
 /* ========================================
-   MATEO GIMENEZ PORTFOLIO - Global Styles
+   Tokens de diseño.
+   En Tailwind 4, lo que definimos en @theme se convierte en clases:
+   --color-ink  ->  bg-ink, text-ink, border-ink ...
    ======================================== */
+@theme {
+  --color-ink: #0f1d33;        /* navy: texto principal y bandas oscuras */
+  --color-ink-2: #16273f;      /* navy un poco más claro: tarjetas sobre navy */
+  --color-paper: #f5f6f8;      /* fondo claro, gris frío */
+  --color-slate: #566174;      /* texto secundario sobre claro */
+  --color-line: #dce1e8;       /* líneas sobre claro */
+  --color-accent: #0f7c8a;     /* acento verde azulado sobre claro */
+  --color-accent-soft: #7fd1d6;/* el mismo acento, para fondos navy */
+  --color-mist: #c4ccda;       /* texto secundario sobre navy */
 
-/* CSS Variables - Design Tokens */
-:root {
-  --color-bg-primary: #050508;
-  --color-bg-secondary: #08080c;
-  --color-bg-card: #0a0a10;
-  --color-bg-elevated: #12121a;
-  
-  --color-accent: #00d4ff;
-  --color-accent-secondary: #00ff88;
-  --color-accent-hover: #00e5ff;
-  
-  --color-text-primary: #ffffff;
-  --color-text-secondary: #9ca3af;
-  --color-text-muted: #6b7280;
-  
-  --color-border: rgba(75, 85, 99, 0.3);
-  --color-border-hover: rgba(0, 212, 255, 0.3);
-  
-  --font-display: 'Syne', sans-serif;
-  --font-body: 'DM Sans', sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
-}
-
-/* Base Styles */
-* {
-  box-sizing: border-box;
+  --font-display: 'Newsreader', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
 }
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 5rem; /* para que el menú fijo no tape los títulos */
 }
 
 body {
-  font-family: var(--font-body);
-  background-color: var(--color-bg-primary);
-  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  background-color: var(--color-paper);
+  color: var(--color-ink);
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
 }
 
-/* Typography Utilities */
-.font-display {
-  font-family: var(--font-display);
+/* Foco visible para quien navega con teclado */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+.on-dark :focus-visible {
+  outline-color: var(--color-accent-soft);
 }
 
-.font-body {
-  font-family: var(--font-body);
-}
-
-.font-mono {
-  font-family: var(--font-mono);
-}
-
-/* Gradient Text */
-.gradient-text {
-  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-secondary) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Glow Effects */
-.glow-box {
-  box-shadow: 0 0 60px rgba(0, 212, 255, 0.08);
-}
-
-.text-glow {
-  text-shadow: 0 0 40px rgba(0, 212, 255, 0.4);
-}
-
-/* Card Hover Effect */
-.card-hover {
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.card-hover:hover {
-  transform: translateY(-6px);
-  border-color: var(--color-border-hover);
-  box-shadow: 0 20px 60px rgba(0, 212, 255, 0.1);
-}
-
-/* Typing Cursor Animation */
-.typing-cursor::after {
-  content: '|';
-  animation: blink 1s infinite;
-  color: var(--color-accent);
-  margin-left: 2px;
-}
-
-@keyframes blink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0; }
-}
-
-/* Fade In Animation */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-fade-in {
-  animation: fadeInUp 0.8s ease-out forwards;
-  opacity: 0;
-}
-
-.delay-100 { animation-delay: 0.1s; }
-.delay-200 { animation-delay: 0.2s; }
-.delay-300 { animation-delay: 0.3s; }
-.delay-400 { animation-delay: 0.4s; }
-.delay-500 { animation-delay: 0.5s; }
-
-/* Hero Background Gradient */
-.hero-gradient {
-  background: 
-    radial-gradient(ellipse at 70% 50%, rgba(0, 212, 255, 0.08) 0%, transparent 60%),
-    radial-gradient(ellipse at 30% 80%, rgba(0, 255, 136, 0.05) 0%, transparent 50%);
-}
-
-/* Noise Overlay */
-.noise-overlay {
-  position: absolute;
-  inset: 0;
-  opacity: 0.03;
-  pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23n)'/%3E%3C/svg%3E");
-}
-
-/* Grid Background */
-.grid-bg {
-  background-image: 
-    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-  background-size: 80px 80px;
-}
-
-/* Navbar Blur */
-.nav-blur {
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-}
-
-/* Custom Cursor Styles */
-@media (pointer: fine) {
-  .cursor-custom * {
-    cursor: none !important;
-  }
-  
-  .custom-cursor {
-    pointer-events: none;
-    position: fixed;
-    z-index: 9999;
-    mix-blend-mode: difference;
-  }
-  
-  .cursor-dot {
-    width: 8px;
-    height: 8px;
-    background: #fff;
-    border-radius: 50%;
-    transition: transform 0.15s ease-out;
-  }
-  
-  .cursor-ring {
-    width: 40px;
-    height: 40px;
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    border-radius: 50%;
-    transition: all 0.15s ease-out;
-  }
-  
-  .cursor-hover .cursor-dot {
-    transform: scale(2);
-    background: var(--color-accent);
-  }
-  
-  .cursor-hover .cursor-ring {
-    transform: scale(1.5);
-    border-color: var(--color-accent);
-    opacity: 0.5;
-  }
-}
-
-/* Hide cursor on touch devices */
-@media (pointer: coarse) {
-  .custom-cursor {
-    display: none !important;
-  }
-}
-
-/* Selection Color */
 ::selection {
-  background-color: rgba(0, 212, 255, 0.3);
-  color: white;
-}
-
-/* Scrollbar Styling */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--color-bg-primary);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--color-bg-elevated);
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
   background: var(--color-accent);
+  color: #fff;
+}
+
+/* ----------------------------------------
+   Hero: la lista "problema -> lo que se construyó"
+   Es el único momento animado de la página: al cargar, la línea
+   se dibuja y cada fila aparece una detrás de otra.
+   ---------------------------------------- */
+.ledger li {
+  position: relative;
+  padding-left: 1.75rem;
+  padding-bottom: 1.75rem;
+}
+.ledger li:last-child {
+  padding-bottom: 0;
+}
+.ledger li::before {
+  /* línea vertical que une las filas */
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 0.55rem;
+  bottom: -0.2rem;
+  width: 1px;
+  background: var(--color-accent);
+  transform-origin: top;
+}
+.ledger li:last-child::before {
+  display: none;
+}
+.ledger li::after {
+  /* punto de cada fila */
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.35rem;
+  width: 11px;
+  height: 11px;
+  border-radius: 999px;
+  background: var(--color-paper);
+  border: 1.5px solid var(--color-accent);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .ledger li {
+    opacity: 0;
+    animation: ledger-in 0.6s ease-out forwards;
+    animation-delay: calc(var(--i) * 0.45s + 0.3s);
+  }
+  .ledger li::before {
+    transform: scaleY(0);
+    animation: ledger-line 0.45s ease-out forwards;
+    animation-delay: calc(var(--i) * 0.45s + 0.55s);
+  }
+  @keyframes ledger-in {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: none; }
+  }
+  @keyframes ledger-line {
+    to { transform: scaleY(1); }
+  }
+}
+
+/* ----------------------------------------
+   Diagrama de cada proyecto (cómo encaja el sistema)
+   ---------------------------------------- */
+.flow li {
+  position: relative;
+}
+.flow li:not(:last-child)::after {
+  content: '';
+  display: block;
+  width: 1px;
+  height: 14px;
+  margin: 0 0 0 1.25rem;
+  background: rgba(196, 204, 218, 0.45);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }

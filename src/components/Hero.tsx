@@ -1,129 +1,47 @@
-'use client';
-
-import { useEffect, useState } from 'react';
+import { hero, ledger } from '@/data/content';
 
 export function Hero() {
-  const [typedText, setTypedText] = useState('');
-  const [mounted, setMounted] = useState(false);
-  const fullText = 'Full Stack Developer';
-
-  useEffect(() => {
-    setMounted(true);
-
-    let index = 0;
-    const timer = setInterval(() => {
-      if (index <= fullText.length) {
-        setTypedText(fullText.slice(0, index));
-        index++;
-      } else {
-        clearInterval(timer);
-      }
-    }, 80);
-
-    return () => clearInterval(timer);
-  }, []);
-
   return (
-    <section className="relative min-h-screen flex items-center">
-     
-      <div className="absolute inset-0 z-0">
-       
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0a0a12] via-[#050508] to-[#0a0a12]" />
-        
-      
-        <div className="absolute inset-0 hero-gradient" />
-        
-       
-        <div className="absolute right-0 top-1/4 w-96 h-96 bg-[#00d4ff]/5 rounded-full blur-3xl" />
-        <div className="absolute left-1/4 bottom-1/4 w-64 h-64 bg-[#00ff88]/5 rounded-full blur-3xl" />
-        
-     
-        <div className="absolute inset-0 grid-bg" />
-        
-       
-        <div className="absolute inset-0 bg-gradient-to-r from-[#050508] via-[#050508]/80 to-transparent" />
-
-        <div className="noise-overlay" />
-      </div>
-
-     
-      <div className="relative z-10 max-w-6xl mx-auto px-6 w-full">
-        <div className="max-w-2xl">
-          
-          <div className={`font-mono text-xs text-gray-600 mb-6 ${mounted ? 'animate-fade-in' : 'opacity-0'}`}>
-            <span className="text-[#00d4ff]">const</span> developer <span className="text-gray-500">=</span> {'{'}
-          </div>
-
-          <h1 className={`font-display font-extrabold text-5xl sm:text-6xl md:text-7xl lg:text-6xl leading-[0.9] mb-6 tracking-tight ${mounted ? 'animate-fade-in delay-100' : 'opacity-0'}`}>
-            <span className="text-white block">MATEO</span>
-            <span className="gradient-text text-glow block">DOGLIANI</span>
+    <section id="top" className="px-5 pb-20 pt-32 sm:px-8 sm:pb-28 sm:pt-40">
+      <div className="mx-auto grid max-w-6xl items-start gap-14 lg:grid-cols-[1.15fr_0.85fr] lg:gap-20">
+        <div>
+          <h1 className="font-display text-4xl font-medium leading-[1.08] tracking-tight sm:text-5xl lg:text-[3.6rem]">
+            {hero.headline}
           </h1>
+          <p className="mt-6 max-w-xl text-lg text-slate">{hero.subheadline}</p>
 
-         
-          <div className={`font-mono text-base sm:text-lg text-gray-400 mb-4 ${mounted ? 'animate-fade-in delay-200' : 'opacity-0'}`}>
-            <span className="text-[#00d4ff]">role:</span>{' '}
-            <span className="typing-cursor">&quot;{typedText}&quot;</span>
+          <div className="mt-9 flex flex-wrap gap-3">
+            <a
+              href="#projects"
+              className="rounded bg-ink px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-accent"
+            >
+              View My Work
+            </a>
+            <a
+              href="#contact"
+              className="rounded border border-ink px-6 py-3 text-sm font-medium transition-colors hover:border-accent hover:text-accent"
+            >
+              Contact Me
+            </a>
           </div>
 
-          <div className={`font-mono text-xs text-gray-600 mb-8 ${mounted ? 'animate-fade-in delay-200' : 'opacity-0'}`}>
-            {'}'};
-          </div>
+          <p className="mt-8 text-sm text-slate">{hero.location}</p>
+        </div>
 
-          <p className={`font-body text-gray-400 text-lg sm:text-xl leading-relaxed mb-6 max-w-lg ${mounted ? 'animate-fade-in delay-300' : 'opacity-0'}`}>
-            No solo hago webs. Construyo{' '}
-            <span className="text-white font-medium">
-              mobile apps, sistemas enterprise, y backends robustos
-            </span>.
-          </p>
-
-         
-          <div className={`flex flex-wrap gap-2 mb-10 ${mounted ? 'animate-fade-in delay-400' : 'opacity-0'}`}>
-            {['Mobile', 'Web', 'Backend', 'Enterprise', 'Automatización'].map((item) => (
-              <span
-                key={item}
-                className="px-3 py-1 border border-gray-700/50 rounded-full text-xs text-gray-400 font-mono"
-              >
-                {item}
-              </span>
+        {/* Pieza principal: problemas reales y lo que se construyó para cada uno */}
+        <aside aria-labelledby="ledger-title" className="lg:pt-3">
+          <h2 id="ledger-title" className="font-display text-xl font-medium">
+            Problems I have worked on
+          </h2>
+          <ol className="ledger mt-6">
+            {ledger.map((row, i) => (
+              <li key={row.problem} style={{ ['--i' as string]: i }}>
+                <p className="text-sm text-slate">{row.problem}</p>
+                <p className="mt-0.5 font-medium">{row.built}</p>
+              </li>
             ))}
-          </div>
-
-        
-          <div className={`flex flex-wrap gap-4 ${mounted ? 'animate-fade-in delay-500' : 'opacity-0'}`}>
-            <a
-              href="#proyectos"
-              className="px-7 py-3.5 bg-[#00d4ff] text-[#050508] font-semibold rounded-lg hover:bg-[#00e5ff] transition-all duration-300 hover:scale-[1.03] font-body"
-              data-hoverable
-            >
-              Ver Proyectos
-            </a>
-            <a
-              href="#contacto"
-              className="px-7 py-3.5 border border-gray-700 text-white font-semibold rounded-lg hover:border-[#00d4ff] hover:text-[#00d4ff] transition-all duration-300 font-body"
-              data-hoverable
-            >
-              Contactar
-            </a>
-            <a
-              href="/cv.pdf"
-              download="cv" 
-              className="px-7 py-3.5 border border-gray-700 text-white font-semibold rounded-lg hover:border-[#00d4ff] hover:text-[#00d4ff] transition-all duration-300 font-body"
-              data-hoverable
-            >
-              Descargar CV
-            </a>
-          </div>
-        </div>
-      </div>
-
-      {/* ===== SCROLL INDICATOR ===== */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
-        <div className="flex flex-col items-center gap-2 text-gray-500">
-          <span className="text-xs font-mono">scroll</span>
-          <div className="w-5 h-8 border border-gray-600 rounded-full flex justify-center pt-1.5">
-            <div className="w-1 h-1.5 bg-[#00d4ff] rounded-full animate-bounce" />
-          </div>
-        </div>
+          </ol>
+        </aside>
       </div>
     </section>
   );
